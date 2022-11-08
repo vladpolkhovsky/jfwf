@@ -8,4 +8,8 @@ public class CustomAttribute extends AbstractComponentAttribute {
         super(attributeName, attributeValue);
     }
 
+    public static final CustomAttribute of(String key, String value) {
+        return new CustomAttribute(key, value);
+    }
+
 }
