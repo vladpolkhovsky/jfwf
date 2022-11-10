@@ -14,13 +14,13 @@ public abstract class AbstractContainerComponent extends AbstractComponent {
 
     protected String containerTagName;
 
-    protected Supplier<List<ComponentAttribute>> componentAttribute;
+    protected Supplier<List<ComponentAttribute>> componentAttributes;
 
-    protected Supplier<List<Component>> subComponent;
+    protected Supplier<List<Component>> subComponents;
 
     @Override
     protected List<ComponentAttribute> getComponentAttributeList() {
-        return componentAttribute.get();
+        return componentAttributes.get();
     }
 
     @Override
@@ -30,7 +30,7 @@ public abstract class AbstractContainerComponent extends AbstractComponent {
 
     @Override
     public List<Component> getSubComponents() {
-        return subComponent.get();
+        return subComponents.get();
     }
 
     @Override

@@ -20,6 +20,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.List;
 import java.util.Optional;
 
 @Controller
@@ -44,12 +45,9 @@ public class TestController {
                 () -> Arrays.asList(headerComponent, paragraphComponent)
         );
         HtmlDocumentComponent htmlDocumentComponent = new HtmlDocumentComponent(
-                () -> new HtmlHeadComponent(
-                        () -> Arrays.asList(CustomAttribute.of("lang", "en")),
-                        Collections::emptyList),
                 () -> new HtmlBodyComponent(
                         Collections::emptyList,
-                        () -> Arrays.asList(defaultContainer))
+                        () -> List.of(defaultContainer))
         );
         HttpServletUtils.putInputStreamToSuccessfulResponse(
                 response, MediaType.TEXT_HTML_VALUE, IOUtils.toInputStream(htmlDocumentComponent.render())

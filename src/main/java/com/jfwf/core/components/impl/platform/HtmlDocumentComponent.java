@@ -5,6 +5,7 @@ import com.jfwf.core.components.impl.container.AbstractContainerComponent;
 
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.List;
 import java.util.function.Supplier;
 
 public final class HtmlDocumentComponent extends AbstractContainerComponent {
@@ -18,11 +19,19 @@ public final class HtmlDocumentComponent extends AbstractContainerComponent {
 
 
     public HtmlDocumentComponent(Supplier<HtmlHeadComponent> headerComponentSupplier, Supplier<HtmlBodyComponent> htmlBodyComponentSupplier) {
-        super(HTML_TAG_NAME, Collections::emptyList, () -> {
-            Component headerComponent = headerComponentSupplier.get();
-            Component bodyComponent = htmlBodyComponentSupplier.get();
-            return Arrays.asList(headerComponent, bodyComponent);
-        });
+        super(HTML_TAG_NAME,
+                Collections::emptyList,
+                () -> {
+                    Component headerComponent = headerComponentSupplier.get();
+                    Component bodyComponent = htmlBodyComponentSupplier.get();
+                    return Arrays.asList(headerComponent, bodyComponent);
+                });
+    }
+
+    public HtmlDocumentComponent(Supplier<HtmlBodyComponent> htmlBodyComponentSupplier) {
+        super(HTML_TAG_NAME,
+                Collections::emptyList,
+                () -> List.of(new HtmlHeadComponent(), htmlBodyComponentSupplier.get()));
     }
 
     @Override

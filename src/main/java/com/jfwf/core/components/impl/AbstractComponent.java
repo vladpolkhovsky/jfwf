@@ -23,7 +23,7 @@ public abstract class AbstractComponent implements Component {
         return "</" + tagName() + ">";
     }
 
-    private String renderAttributes() {
+    protected String renderAttributes() {
         List<String> renderedAttributes = CollectionUtils.emptyIfNull(getComponentAttributeList()).stream()
                 .map(ComponentAttribute::render).toList();
         return StringUtils.join(renderedAttributes, " ");
