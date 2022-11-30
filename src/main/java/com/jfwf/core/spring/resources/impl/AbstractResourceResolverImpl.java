@@ -1,7 +1,7 @@
-package com.jfwf.core.resources.impl;
+package com.jfwf.core.spring.resources.impl;
 
-import com.jfwf.core.resources.ResourceResolver;
-import com.jfwf.core.resources.ResourceResolverResult;
+import com.jfwf.core.spring.resources.ResourceResolver;
+import com.jfwf.core.spring.resources.ResourceResolverResult;
 import com.jfwf.core.utils.HttpServletUtils;
 import org.springframework.core.io.ClassPathResource;
 

@@ -1,12 +1,13 @@
-package com.jfwf.core.resources.configuration;
+package com.jfwf.core.spring.resources.configuration;
 
 import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Component;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-@Scope(value = "session")
+@Scope(value = "session", proxyMode = ScopedProxyMode.TARGET_CLASS)
 @Component(value = "jfwfContext")
 public class JfwfContext {
 

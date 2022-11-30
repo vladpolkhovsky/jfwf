@@ -1,4 +1,4 @@
-package com.jfwf.core.resources;
+package com.jfwf.core.spring.resources;
 
 import lombok.Builder;
 import lombok.Data;

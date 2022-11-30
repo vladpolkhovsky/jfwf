@@ -1,5 +1,7 @@
 package com.jfwf.core.document.page.layout;
 
-public interface JfwfPageLayout {
+import com.jfwf.core.document.Renderable;
+
+public interface JfwfPageLayout extends Renderable {
 
 }

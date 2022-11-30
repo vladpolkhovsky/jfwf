@@ -1,12 +1,16 @@
 package com.jfwf.core.document.container;
 
+import com.jfwf.core.document.Renderable;
 import com.jfwf.core.document.type.JfwfTextContainerType;
-import com.jfwf.core.resources.configuration.JfwfContext;
+import com.jfwf.core.html.components.Component;
+import com.jfwf.core.html.components.impl.text.ParagraphComponent;
+import com.jfwf.core.spring.resources.configuration.JfwfContext;
 
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Function;
 
-public class JfwfTextContainer implements JfwfContainer<String> {
+public class JfwfTextContainer implements JfwfContainer<String>, Renderable {
 
     private JfwfTextContainerType jfwfTextContainerType = JfwfTextContainerType.getDefault();
 
@@ -27,17 +31,22 @@ public class JfwfTextContainer implements JfwfContainer<String> {
         this.contextResolver = contextResolver;
     }
 
-    public static JfwfTextContainer of(JfwfTextContainerType jfwfTextContainerType, Function<JfwfContext, String> contextResolver) {
-        return new JfwfTextContainer(jfwfTextContainerType, contextResolver);
-    }
-
     public static JfwfTextContainer of(Function<JfwfContext, String> contextResolver) {
         return new JfwfTextContainer(contextResolver);
+    }
+
+    public static JfwfTextContainer of(JfwfTextContainerType jfwfTextContainerType, Function<JfwfContext, String> contextResolver) {
+        return new JfwfTextContainer(jfwfTextContainerType, contextResolver);
     }
 
     public void setType(JfwfTextContainerType jfwfTextContainerType) {
         Objects.requireNonNull(jfwfTextContainerType);
         this.jfwfTextContainerType = jfwfTextContainerType;
+    }
+
+    public void setContextResolver(Function<JfwfContext, String> contextResolver) {
+        Objects.requireNonNull(contextResolver);
+        this.contextResolver = contextResolver;
     }
 
     public JfwfTextContainerType getJfwfTextContainerType() {
@@ -48,13 +57,15 @@ public class JfwfTextContainer implements JfwfContainer<String> {
         return contextResolver;
     }
 
-    public void setContextResolver(Function<JfwfContext, String> contextResolver) {
-        Objects.requireNonNull(contextResolver);
-        this.contextResolver = contextResolver;
-    }
-
     @Override
     public String contextResolver(JfwfContext context) {
         return contextResolver.apply(context);
     }
+
+    //Переписать в отдельный класс.
+    @Override
+    public List<Component> renderedComponent(JfwfContext context) {
+        return List.of(new ParagraphComponent(() -> contextResolver.apply(context), () -> List.of()));
+    }
+
 }

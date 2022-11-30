@@ -1,4 +1,4 @@
-package com.jfwf.core.resources.configuration;
+package com.jfwf.core.spring.resources.configuration;
 
 public class JfwfContextAttribute<T> {
 

@@ -1,4 +1,4 @@
-package com.jfwf.core.resources;
+package com.jfwf.core.spring.resources;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;

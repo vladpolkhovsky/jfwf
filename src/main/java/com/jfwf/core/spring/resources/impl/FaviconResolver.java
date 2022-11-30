@@ -1,4 +1,4 @@
-package com.jfwf.core.resources.impl;
+package com.jfwf.core.spring.resources.impl;
 
 import com.jfwf.core.utils.HttpServletUtils;
 import org.apache.commons.lang3.StringUtils;

@@ -1,4 +1,4 @@
-package com.jfwf.core.resources;
+package com.jfwf.core.spring.resources;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

@@ -17,7 +17,7 @@ public final class HtmlHeadComponent extends AbstractContainerComponent {
 
     private static final String LINK_TAG_NAME = "link";
 
-    private static final List<Component> DEFAULT_COMPONENTS = List.of(
+    public static final List<Component> DEFAULT_COMPONENTS = List.of(
             new VoidTagComponent(META_TAG_NAME, () -> List.of(CustomAttribute.of("charset", "utf-8"))),
 
             new VoidTagComponent(META_TAG_NAME, () -> List.of(

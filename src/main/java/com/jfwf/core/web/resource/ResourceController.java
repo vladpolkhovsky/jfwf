@@ -1,8 +1,8 @@
 package com.jfwf.core.web.resource;
 
-import com.jfwf.core.resources.ResourceResolver;
-import com.jfwf.core.resources.ResourceResolverManager;
-import com.jfwf.core.resources.ResourceResolverResult;
+import com.jfwf.core.spring.resources.ResourceResolver;
+import com.jfwf.core.spring.resources.ResourceResolverManager;
+import com.jfwf.core.spring.resources.ResourceResolverResult;
 import com.jfwf.core.utils.HttpServletUtils;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;

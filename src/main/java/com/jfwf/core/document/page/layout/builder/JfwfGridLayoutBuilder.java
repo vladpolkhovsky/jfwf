@@ -1,7 +1,7 @@
 package com.jfwf.core.document.page.layout.builder;
 
 import com.jfwf.core.document.container.JfwfContainer;
-import com.jfwf.core.document.page.layout.JfwfGridLayout;
+import com.jfwf.core.document.page.layout.impl.JfwfGridLayout;
 
 import java.util.ArrayList;
 import java.util.List;

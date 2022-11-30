@@ -2,8 +2,8 @@ package page;
 
 import com.jfwf.core.document.container.JfwfTextContainer;
 import com.jfwf.core.document.page.JfwfPage;
-import com.jfwf.core.document.page.layout.JfwfSimpleLayout;
 import com.jfwf.core.document.page.layout.builder.JfwfGridLayoutBuilder;
+import com.jfwf.core.document.page.layout.impl.JfwfSimpleLayout;
 
 public class MainPage {
 
