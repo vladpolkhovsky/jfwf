@@ -1,13 +1,12 @@
 package com.jfwf.core.web.test;
 
-import com.jfwf.core.components.impl.attribute.CustomAttribute;
-import com.jfwf.core.components.impl.attribute.IdAttribute;
-import com.jfwf.core.components.impl.container.DefaultContainer;
-import com.jfwf.core.components.impl.platform.HtmlBodyComponent;
-import com.jfwf.core.components.impl.platform.HtmlDocumentComponent;
-import com.jfwf.core.components.impl.platform.HtmlHeadComponent;
-import com.jfwf.core.components.impl.text.HeaderComponent;
-import com.jfwf.core.components.impl.text.ParagraphComponent;
+import com.jfwf.core.html.components.impl.attribute.CustomAttribute;
+import com.jfwf.core.html.components.impl.attribute.IdAttribute;
+import com.jfwf.core.html.components.impl.container.DefaultContainer;
+import com.jfwf.core.html.components.impl.platform.HtmlBodyComponent;
+import com.jfwf.core.html.components.impl.platform.HtmlDocumentComponent;
+import com.jfwf.core.html.components.impl.text.HeaderComponent;
+import com.jfwf.core.html.components.impl.text.ParagraphComponent;
 import com.jfwf.core.utils.HttpServletUtils;
 import org.apache.commons.io.IOUtils;
 import org.springframework.http.MediaType;
